@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  db1:
+    image: mysql:8.0
+    container_name: db1
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: abcd
+    ports:
+      - "3306:3306"
+    volumes:
+      - db1_data:/var/lib/mysql
+      - ./backup/abcd.sql:/docker-entrypoint-initdb.d/abcd.sql
+
+  db2:
+    image: mysql:8.0
+    container_name: db2
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: abcd
+    ports:
+      - "3307:3306"
+    volumes:
+      - db2_data:/var/lib/mysql
+      - ./backup/abcd.sql:/docker-entrypoint-initdb.d/abcd.sql
+
+  db3:
+    image: mysql:8.0
+    container_name: db3
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: abcd
+    ports:
+      - "3308:3306"
+    volumes:
+      - db3_data:/var/lib/mysql
+      - ./backup/abcd.sql:/docker-entrypoint-initdb.d/abcd.sql
+
+  app:
+    build: .
+    container_name: node_app
+    environment:
+      MYSQL_HOST: db1
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DB: abcd
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db1
+      - db2
+      - db3
+
+volumes:
+  db1_data:
+  db2_data:
+  db3_data:

@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  mysql1:
+    image: mysql:5.7
+    container_name: mysql1
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: abcd
+    ports:
+      - "3306:3306"
+    networks:
+      - my-network
+
+  mysql2:
+    image: mysql:5.7
+    container_name: mysql2
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: abcd
+    ports:
+      - "3307:3306"
+    networks:
+      - my-network
+
+  mysql3:
+    image: mysql:5.7
+    container_name: mysql3
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: abcd
+    ports:
+      - "3308:3306"
+    networks:
+      - my-network
+
+  mysql_importer:
+    image: mysql:5.7
+    container_name: mysql_importer
+    volumes:
+      - ./abcd.sql:/docker-entrypoint-initdb.d/abcd.sql
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
