@@ -76,7 +76,7 @@ const ChatApp = ({ setState, setDate }) => {
   ]
 
   const hitRequest = async (message, index) => {
-    setInput(message)
+    setInput(_messages[index])
     if (index == 0) {
       message = 'SELECT * FROM `data` WHERE `id` = 7;'
     }
