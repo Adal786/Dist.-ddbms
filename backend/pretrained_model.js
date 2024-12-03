@@ -15,11 +15,12 @@ async function pretrained_model(data) {
     const url = 'https://api.openai.com/v1/chat/completions';
     const headers = {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer sk-GjzN0wNHg26Kp1nqlD1ES6zJQxBug_Mr6SsNd9jcmqT3BlbkFJomEATSoMq31H7Hw8Z2yx3XPJDCSeqnBwHuXgSiVLQA` // Use environment variable for API key
+        'Authorization': `Bearer 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` // Use environment variable for API key
     };
 
 
     try {
+        console.log("hey")
         const body = JSON.stringify({
             model: "gpt-4o-mini",
             messages: [
@@ -118,6 +119,7 @@ stick to nlp not in any other format
             headers: headers,
             body: body
         });
+        console.log('Hey')
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);

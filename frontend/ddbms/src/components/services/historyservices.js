@@ -8,9 +8,6 @@ const historyServices = {
     read(userId) {
         return requests.get(`/history/${userId}`);
     },
-    obtain() {
-        return requests.get('/admin-history');
-    },
 };
 
 export default historyServices;

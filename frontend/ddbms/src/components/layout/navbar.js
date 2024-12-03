@@ -59,7 +59,7 @@ const Navbar = () => {
             onClick={toggleMenu}
             className="block px-4 py-2 text-white hover:bg-blue-700 rounded transition duration-200"
           >
-            Data
+            Guide
           </Link>
           <Link
             to="/users"

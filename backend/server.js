@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const historyRoutes = require('./routes/historyRoutes');
-const adminRoutes = require('./routes/adminRoutes');
 const rawQueryRoutes = require('./routes/rawQueryRoutes'); // Import raw query routes
 const { MONGO_URI } = require('./config/config');
 const sequelize = require('./config/mysql'); // Import MySQL connection
@@ -22,7 +21,6 @@ app.use(express.json());
 // Routes
 app.use('/api', authRoutes);
 app.use('/api', historyRoutes);
-app.use('/api', adminRoutes);
 app.use('/api', rawQueryRoutes);
 app.use('/api', dataRoutes);
 app.use('/api', userRoutes);

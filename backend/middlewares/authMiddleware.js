@@ -16,10 +16,3 @@ exports.protect = (req, res, next) => {
         return res.status(401).json({ error: 'Token failed, not authorized' });
     }
 };
-
-exports.adminOnly = (req, res, next) => {
-    if (!req.user || !req.user.admin) {
-        return res.status(403).json({ error: 'Access denied, admin only' });
-    }
-    next();
-};

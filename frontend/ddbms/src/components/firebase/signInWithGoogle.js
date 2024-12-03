@@ -6,6 +6,7 @@ function SignInWithGoogle({ setMail, setName }) {
     const [loading, setLoading] = useState(false);
 
     function googleLogin() {
+        if (loading) return
         setLoading(true);
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider).then(async (results) => {
