@@ -113,15 +113,18 @@ const ChatApp = ({ setState, setDate }) => {
         {Array.isArray(messages) && messages.length == 0 &&
           <>
             <h1><b>Ask anything about the data</b></h1>
-            {_messages.map((mes, index) => (
-              <h2 className='my-5' key={index}><span className='rounded-full bg-gray-200 shadow p-2'
-                style={{ cursor: 'pointer' }}
-                onClick={() => hitRequest(mes.message, index)}>{mes.message}</span></h2>
-            ))}
+            {
+              _messages.map((mes, index) => (
+                <h2 className='my-5' key={index}>
+                  <span className='rounded-full bg-gray-200 shadow p-2' style={{ cursor: 'pointer' }}
+                    onClick={() => hitRequest(mes.message, index)}>{mes.message}</span>
+                </h2>
+              ))
+            }
             <h2 className='my-3 ps-4'><span className='rounded-full bg-gray-500 shadow p-2'
               style={{ cursor: 'pointer' }}
               onClick={openGuide}>
-              Read more...</span></h2>
+              Don't know how to use? Need Guide...</span></h2>
           </>
         }
         {messages.map((msg, index) => (
