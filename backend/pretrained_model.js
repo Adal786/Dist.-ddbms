@@ -15,7 +15,7 @@ async function pretrained_model(data) {
     const url = 'https://api.openai.com/v1/chat/completions';
     const headers = {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer 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` // Use environment variable for API key
+        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}` // Use environment variable for API key
     };
 
 

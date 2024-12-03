@@ -8,7 +8,7 @@ const { MONGO_URI } = require('./config/config');
 const sequelize = require('./config/mysql'); // Import MySQL connection
 const userRoutes = require('./routes/userRoutes');
 const dataRoutes = require('./routes/dataRoutes');
-
+require('dotenv').config();
 
 const app = express();
 
