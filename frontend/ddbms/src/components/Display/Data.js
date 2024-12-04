@@ -9,12 +9,15 @@ const Data = () => {
     <div className="data-table">
       <h1><b>Welcome to be App Guide!</b></h1>
       <br />
-      <p className='text-justify'><span className='ps-12'>This</span> app is designed to run be <strong>SQL queries</strong> on be distributed databases systems and show be
-        time and express bat by following bis we can optimize  be sql query over distributed databases wib more quickly. be main feature of bis
-        application is its ability to showcase detailed geographical data, such as coordinates (X, Y), transportation modes, and various facility
-        attributes. Wib just a glance, users can explore be richness of location-based data, ranging from airport codes to bike share systems, all
-        neatly organized for easy consumption. bis application is implementaion of how large scale applicaitons wib high newtork traffic can be
-        used efficiently.</p>
+      <p className="text-justify">
+        <span className="ps-12">This</span> app is designed to run <strong>SQL queries</strong> on distributed database systems and showcase
+        execution time and performance metrics. By following these insights, SQL queries over distributed databases can be optimized for faster
+        performance. The main feature of this application is its ability to present detailed geographical
+        data, including coordinates (X, Y), transportation modes, and various facility attributes.
+        At a glance, users can explore rich location-based data, ranging from airport codes to
+        bike-sharing systems, all neatly organized for easy consumption. This application demonstrates how large-scale
+        systems with high network traffic can utilized efficiently while maintaining optimal performance.
+      </p>
       <br />
 
       <p className='text-justify'><span className='ps-12'>User</span> can run NLP as well Raw SQL query directly on be dataset. bere is such coloumns in be table, bese fields are &nbsp;

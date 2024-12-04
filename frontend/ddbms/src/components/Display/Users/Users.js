@@ -21,7 +21,6 @@ const Users = () => {
                     <tr>
                         <th style={{ border: '1px solid black', padding: '10px' }}>Name</th>
                         <th style={{ border: '1px solid black', padding: '10px' }}>Email</th>
-                        <th style={{ border: '1px solid black', padding: '10px' }}>Admin</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +28,6 @@ const Users = () => {
                         <tr key={user._id}>
                             <td style={{ border: '1px solid black', padding: '10px' }}>{user.name}</td>
                             <td style={{ border: '1px solid black', padding: '10px' }}>{user.email}</td>
-                            <td style={{ border: '1px solid black', padding: '10px' }}>{user.admin ? 'Yes' : 'No'}</td>
                         </tr>
                     ))}
                 </tbody>
